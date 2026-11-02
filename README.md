@@ -5,6 +5,8 @@ No more fear of note format not transferable. HTML format enables more formattin
 ### PERSONAL USE
 I personally use this note taking application for work/programming notes. I use Firefox's pin to taskbar feature to make the localhost website act like a local windows application (See screenshot).
 
+<img width="1093" height="1185" alt="htmlnotes" src="https://github.com/user-attachments/assets/dfa18009-9341-49de-8dc1-b405f9a133e8" />
+
 
 ## RUN WITH DOCKER (any platforms)
 Install Docker core engine CLI. Example on Debian:
@@ -22,7 +24,7 @@ $ docker compose build
 $ docker compose up -d
 ```
 
-Go to http://localhost:9000/htmlnotes/index.html. Notes are saved in `htmlnotes/notes` diretory.
+Go to http://localhost:9000/htmlnotes/index.html. Notes are saved in `htmlnotes/notes/` diretory.
 
 
 ## MANUAL SET UP ON `LOCALHOST`
