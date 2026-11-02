@@ -1,8 +1,10 @@
 ## WHAT IT DOES
 HTML based note taking application run on localhost. Save all notes in HTML format files on localhost http://localhost/htmlnotes/notes/. And also in SQLite database `notes.sqlite`.
-No more fear of note format not transferable. HTML format enables more formattings than markdown.
+No more fear of note format not transferable. HTML format enables more formatting than markdown.
 
 ### PERSONAL USE
+I made this after I could no longer make Tomboy notes work any longer on Windows 11. A Tomboy notes replacement. Yes, Tomboy notes can be imported, as long as they are exported to HTML in Tomboy first.
+
 I personally use this note taking application for work/programming notes. I use Firefox's pin to taskbar feature to make the localhost website act like a local windows application (See screenshot).
 
 <img width="1093" height="1185" alt="htmlnotes" src="https://github.com/user-attachments/assets/dfa18009-9341-49de-8dc1-b405f9a133e8" />

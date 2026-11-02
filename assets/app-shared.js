@@ -252,9 +252,9 @@ export async function refreshNotesList(getRecent = false, search) {
         noteItem.setAttribute('data-id', note.id);
         noteItem.innerHTML = '<div class="note-title">' + note.title + '</div>';
         if (note.pinned) {
-            noteItem.innerHTML += '<span class="note-pinned">&#9906;</span>';
+            noteItem.innerHTML += '<span class="note-pinned" title="Unpin note">&#9906;</span>';
         } else {
-            noteItem.innerHTML += '<span class="note-pin">&#9906;</span>';
+            noteItem.innerHTML += '<span class="note-pin" title="Pin note to top">&#9906;</span>';
         }
         notesList.appendChild(noteItem);
     });
