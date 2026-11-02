@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localhost - HTMLNotes</title>
+    <link rel="shortcut icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="/htmlnotes/assets/trix/trix.css">
+    <link rel="stylesheet" href="/htmlnotes/assets/block-ui/block-ui.css">
+    <link rel="stylesheet" href="/htmlnotes/assets/app.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- left sidebar -->
+        <div id="left-sidebar" class="sidebar">
+            <button class="sidebar-toggle" title="Toggle sidebar">☰</button>
+            <div class="sidebar-title">
+                <h1>HTMLNotes</h1>
+            </div>
+            <div class="new-note-container">
+                <button class="btn add-note-btn" id="addNoteBtn" title="Create a new note" aria-disabled="false">New Note</button>
+            </div>
+            <div class="search-container">
+                <input type="text" class="search-box" placeholder="Search notes..." id="searchInput" aria-label="Search notes">
+            </div>
+            <div class="controls" id="filterControls">
+                <a href="/htmlnotes/all-notes.html" class="btn" title="Show all notes">All Notes</a>
+                <button class="btn active" data-filter="recent" title="Show recent notes">Recent</button>
+            </div>
+
+            <div class="notes-list" id="notesList"></div>
+
+            <div class="empty-state no-display" id="sidebarEmptyState">
+                <h3>No notes found</h3>
+                <p>Create a new note or adjust your search/filters.</p>
+            </div>
+        </div>
+
+        <!-- main content -->
+        <div class="main-content" id="mainContent">
+            <div id="trix-not-init-warning" class="no-display">
+                <h1><mark>Trix not initialized!</mark></h1>
+                <p>Please try to reload the page.</p>
+            </div>
+
+            <!-- note editora area -->
+            <div class="editor-area no-display" id="editorArea">
+                <input type="hidden" id="noteId">
+                <input type="text" id="noteTitle" placeholder="Note title..." aria-label="Note title">
+
+                <!-- note content -->
+                <trix-editor input="noteContent" class="trix-content" autofocus></trix-editor>
+
+                <input type="text" id="noteTags" placeholder="Tags (comma separated)..." aria-label="Note tags">
+
+                <div class="editor-buttons">
+                    <a data-href="/htmlnotes/notes/note.id.html"
+                        class="btn export-btn"
+                        id="exportNoteBtn"
+                        target="_blank">
+                        Export Note
+                    </a>
+                    <div class="import-container">
+                        <button class="btn" id="importNoteBtn">
+                            <i class="fas fa-file-import"></i> Import Note
+                        </button>
+                        <input type="file" id="importFileInput" accept=".html" />
+                    </div>
+                    <button class="btn delete-note-btn" id="deleteNoteBtn">Delete Note</button>
+                </div>
+            </div>
+
+            <!-- no note selected -->
+            <div class="empty-state" id="mainEmptyState">
+                <h3>Select a Note or Create New</h3>
+                <p>Choose a note from the sidebar or click "New Note" to get started.</p>
+            </div>
+
+            <!-- Flash message -->
+            <div id="flash-container"></div>
+        </div>
+    </div>
+
+    <!-- preloader overlay while page loads -->
+    <div id="preloader" class="no-display"></div>
+
+    <script src="/htmlnotes/assets/trix/trix.umd.js"></script>
+    <script src="/htmlnotes/assets/trix/trix.config.js" type="module"></script>
+    <script src="/htmlnotes/assets/app.js" type="module"></script>
+</body>
+</html>

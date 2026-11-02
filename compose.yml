@@ -1,0 +1,15 @@
+services:
+  server:
+    image: htmlnotes
+    build:
+      context: .
+    restart: always
+    ports:
+      - 9000:80
+    volumes:
+      - .:/var/www/html/htmlnotes
+    logging:
+      driver: json-file
+      options:
+        max-size: "50m"
+        max-file: "10"

@@ -1,0 +1,7 @@
+notes
+server/notes.sqlite
+**/**.log
+**/.git
+**/.gitignore
+LICENSE
+README.md
